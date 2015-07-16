@@ -13,6 +13,9 @@
 		CB929AF31B579F5E00962DEA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB929AF21B579F5E00962DEA /* Images.xcassets */; };
 		CB929AF61B579F5E00962DEA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB929AF41B579F5E00962DEA /* LaunchScreen.xib */; };
 		CB929B021B579F5F00962DEA /* RONetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB929B011B579F5F00962DEA /* RONetworkingTests.swift */; };
+		CB929B0E1B57A0CC00962DEA /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = CB929B0B1B57A0CC00962DEA /* LICENSE */; };
+		CB929B0F1B57A0CC00962DEA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CB929B0C1B57A0CC00962DEA /* README.md */; };
+		CB929B101B57A0CC00962DEA /* RONetworking.podspec in Resources */ = {isa = PBXBuildFile; fileRef = CB929B0D1B57A0CC00962DEA /* RONetworking.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		CB929AFB1B579F5F00962DEA /* RONetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RONetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB929B001B579F5F00962DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB929B011B579F5F00962DEA /* RONetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RONetworkingTests.swift; sourceTree = "<group>"; };
+		CB929B0B1B57A0CC00962DEA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		CB929B0C1B57A0CC00962DEA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CB929B0D1B57A0CC00962DEA /* RONetworking.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RONetworking.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,9 @@
 		CB929ADD1B579F5E00962DEA = {
 			isa = PBXGroup;
 			children = (
+				CB929B0B1B57A0CC00962DEA /* LICENSE */,
+				CB929B0C1B57A0CC00962DEA /* README.md */,
+				CB929B0D1B57A0CC00962DEA /* RONetworking.podspec */,
 				CB929AE81B579F5E00962DEA /* RONetworking */,
 				CB929AFE1B579F5F00962DEA /* RONetworkingTests */,
 				CB929AE71B579F5E00962DEA /* Products */,
@@ -192,8 +201,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB929B101B57A0CC00962DEA /* RONetworking.podspec in Resources */,
 				CB929AF11B579F5E00962DEA /* Main.storyboard in Resources */,
 				CB929AF61B579F5E00962DEA /* LaunchScreen.xib in Resources */,
+				CB929B0E1B57A0CC00962DEA /* LICENSE in Resources */,
 				CB929AF31B579F5E00962DEA /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB929B0F1B57A0CC00962DEA /* README.md in Sources */,
 				CB929AEE1B579F5E00962DEA /* ViewController.swift in Sources */,
 				CB929AEC1B579F5E00962DEA /* AppDelegate.swift in Sources */,
 			);
