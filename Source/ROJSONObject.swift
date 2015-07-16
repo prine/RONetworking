@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 public class ROJSONObject {
     
@@ -69,12 +70,42 @@ public class ROJSONObject {
     func getDate(key:String, dateFormatter:NSDateFormatter? = nil) -> NSDate? {
         
         if let jsonString = jsonData[key].string {
-            return Helper.DateHelper.parseDate(jsonString)
+            return parseDate(jsonString)
+        }
+        
+        return nil
+    }
+    
+    func parseDate(string:String, dateFormatter:NSDateFormatter? = nil) -> NSDate? {
+        // Check if a dateParser has been passed or not
+        if(dateFormatter != nil) {
+            if let parsedDate = dateFormatter!.dateFromString(string) {
+                return parsedDate
+            } else {
+                return nil
+            }
+        } else {
+            // If there hasnt been passed a specific NSDateFormatter us the ISO8601 standard
+            var isoDateFormats = ["yyyy-MM-dd'T'HH:mm:ssZZZ",
+                "yyyy-MM-dd'T'HH:mm:ssZZZZ",
+                "yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"]
+            
+            var isoDateFormatter = NSDateFormatter()
+            
+            for isoDateFormat in isoDateFormats {
+                isoDateFormatter.dateFormat = isoDateFormat
+                
+                if let parsedDate = isoDateFormatter.dateFromString(string) {
+                    return parsedDate
+                }
+            }
         }
         
         return nil
     }
 }
+
+
 
 public class Value<T> {
     public class func get(rojsonobject:ROJSONObject, key:String) -> T {
