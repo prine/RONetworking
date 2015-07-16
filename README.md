@@ -12,7 +12,7 @@ pod "RONetworking"
 ```
 
 ## How to use
-Add a short description here how to use.
+TODO
 
 ## License
 
