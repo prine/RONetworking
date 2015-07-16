@@ -27,7 +27,7 @@ class ViewController: UIViewController {
                 println("Firstname: " + employeeContainer.employees[0].firstname)
                 println("Lastname: " + employeeContainer.employees[0].firstname)
                 println("Age: \(employeeContainer.employees[0].age)")
-
+                
             } else {
                 println("Retrieving data from Service failed with status code \(status)")
             }
@@ -36,6 +36,7 @@ class ViewController: UIViewController {
         baseWebservice.getROJSONObject(urlToJSON, callback: callbackReports, roError:{ (errorObject) -> () in
             println(errorObject.log())
         })
+
     }
 
     override func didReceiveMemoryWarning() {
