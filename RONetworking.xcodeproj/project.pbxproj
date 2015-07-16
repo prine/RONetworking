@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CB929AEC1B579F5E00962DEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB929AEB1B579F5E00962DEA /* AppDelegate.swift */; };
+		CB929AEE1B579F5E00962DEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB929AED1B579F5E00962DEA /* ViewController.swift */; };
+		CB929AF11B579F5E00962DEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB929AEF1B579F5E00962DEA /* Main.storyboard */; };
+		CB929AF31B579F5E00962DEA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB929AF21B579F5E00962DEA /* Images.xcassets */; };
+		CB929AF61B579F5E00962DEA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB929AF41B579F5E00962DEA /* LaunchScreen.xib */; };
+		CB929B021B579F5F00962DEA /* RONetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB929B011B579F5F00962DEA /* RONetworkingTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB929AFC1B579F5F00962DEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB929ADE1B579F5E00962DEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB929AE51B579F5E00962DEA;
+			remoteInfo = RONetworking;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CB929AE61B579F5E00962DEA /* RONetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RONetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB929AEA1B579F5E00962DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB929AEB1B579F5E00962DEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CB929AED1B579F5E00962DEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CB929AF01B579F5E00962DEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CB929AF21B579F5E00962DEA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CB929AF51B579F5E00962DEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		CB929AFB1B579F5F00962DEA /* RONetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RONetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB929B001B579F5F00962DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB929B011B579F5F00962DEA /* RONetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RONetworkingTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB929AE31B579F5E00962DEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB929AF81B579F5F00962DEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB929ADD1B579F5E00962DEA = {
+			isa = PBXGroup;
+			children = (
+				CB929AE81B579F5E00962DEA /* RONetworking */,
+				CB929AFE1B579F5F00962DEA /* RONetworkingTests */,
+				CB929AE71B579F5E00962DEA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CB929AE71B579F5E00962DEA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB929AE61B579F5E00962DEA /* RONetworking.app */,
+				CB929AFB1B579F5F00962DEA /* RONetworkingTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB929AE81B579F5E00962DEA /* RONetworking */ = {
+			isa = PBXGroup;
+			children = (
+				CB929AEB1B579F5E00962DEA /* AppDelegate.swift */,
+				CB929AED1B579F5E00962DEA /* ViewController.swift */,
+				CB929AEF1B579F5E00962DEA /* Main.storyboard */,
+				CB929AF21B579F5E00962DEA /* Images.xcassets */,
+				CB929AF41B579F5E00962DEA /* LaunchScreen.xib */,
+				CB929AE91B579F5E00962DEA /* Supporting Files */,
+			);
+			path = RONetworking;
+			sourceTree = "<group>";
+		};
+		CB929AE91B579F5E00962DEA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CB929AEA1B579F5E00962DEA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CB929AFE1B579F5F00962DEA /* RONetworkingTests */ = {
+			isa = PBXGroup;
+			children = (
+				CB929B011B579F5F00962DEA /* RONetworkingTests.swift */,
+				CB929AFF1B579F5F00962DEA /* Supporting Files */,
+			);
+			path = RONetworkingTests;
+			sourceTree = "<group>";
+		};
+		CB929AFF1B579F5F00962DEA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CB929B001B579F5F00962DEA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CB929AE51B579F5E00962DEA /* RONetworking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB929B051B579F5F00962DEA /* Build configuration list for PBXNativeTarget "RONetworking" */;
+			buildPhases = (
+				CB929AE21B579F5E00962DEA /* Sources */,
+				CB929AE31B579F5E00962DEA /* Frameworks */,
+				CB929AE41B579F5E00962DEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RONetworking;
+			productName = RONetworking;
+			productReference = CB929AE61B579F5E00962DEA /* RONetworking.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CB929AFA1B579F5F00962DEA /* RONetworkingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB929B081B579F5F00962DEA /* Build configuration list for PBXNativeTarget "RONetworkingTests" */;
+			buildPhases = (
+				CB929AF71B579F5F00962DEA /* Sources */,
+				CB929AF81B579F5F00962DEA /* Frameworks */,
+				CB929AF91B579F5F00962DEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB929AFD1B579F5F00962DEA /* PBXTargetDependency */,
+			);
+			name = RONetworkingTests;
+			productName = RONetworkingTests;
+			productReference = CB929AFB1B579F5F00962DEA /* RONetworkingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB929ADE1B579F5E00962DEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Rascor International AG";
+				TargetAttributes = {
+					CB929AE51B579F5E00962DEA = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					CB929AFA1B579F5F00962DEA = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = CB929AE51B579F5E00962DEA;
+					};
+				};
+			};
+			buildConfigurationList = CB929AE11B579F5E00962DEA /* Build configuration list for PBXProject "RONetworking" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CB929ADD1B579F5E00962DEA;
+			productRefGroup = CB929AE71B579F5E00962DEA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB929AE51B579F5E00962DEA /* RONetworking */,
+				CB929AFA1B579F5F00962DEA /* RONetworkingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB929AE41B579F5E00962DEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB929AF11B579F5E00962DEA /* Main.storyboard in Resources */,
+				CB929AF61B579F5E00962DEA /* LaunchScreen.xib in Resources */,
+				CB929AF31B579F5E00962DEA /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB929AF91B579F5F00962DEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB929AE21B579F5E00962DEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB929AEE1B579F5E00962DEA /* ViewController.swift in Sources */,
+				CB929AEC1B579F5E00962DEA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB929AF71B579F5F00962DEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB929B021B579F5F00962DEA /* RONetworkingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB929AFD1B579F5F00962DEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB929AE51B579F5E00962DEA /* RONetworking */;
+			targetProxy = CB929AFC1B579F5F00962DEA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CB929AEF1B579F5E00962DEA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB929AF01B579F5E00962DEA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CB929AF41B579F5E00962DEA /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB929AF51B579F5E00962DEA /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CB929B031B579F5F00962DEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CB929B041B579F5F00962DEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CB929B061B579F5F00962DEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RONetworking/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CB929B071B579F5F00962DEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RONetworking/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CB929B091B579F5F00962DEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RONetworkingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RONetworking.app/RONetworking";
+			};
+			name = Debug;
+		};
+		CB929B0A1B579F5F00962DEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RONetworkingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RONetworking.app/RONetworking";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB929AE11B579F5E00962DEA /* Build configuration list for PBXProject "RONetworking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB929B031B579F5F00962DEA /* Debug */,
+				CB929B041B579F5F00962DEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB929B051B579F5F00962DEA /* Build configuration list for PBXNativeTarget "RONetworking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB929B061B579F5F00962DEA /* Debug */,
+				CB929B071B579F5F00962DEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CB929B081B579F5F00962DEA /* Build configuration list for PBXNativeTarget "RONetworkingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB929B091B579F5F00962DEA /* Debug */,
+				CB929B0A1B579F5F00962DEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CB929ADE1B579F5E00962DEA /* Project object */;
+}
