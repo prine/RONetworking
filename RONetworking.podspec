@@ -32,6 +32,6 @@ s.resource_bundles = {
 
 # s.public_header_files = 'Pod/Classes/**/*.h'
 # s.frameworks = 'UIKit', 'MapKit'
-s.dependency 'Alamofire', '~> 1.2.3'
+s.dependency 'Alamofire', '~> 1.3'
 s.dependency 'SwiftyJSON', '~> 2.2.0'
 end
