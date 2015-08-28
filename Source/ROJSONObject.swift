@@ -22,11 +22,17 @@ public class ROJSONObject {
     }
     
     public required init(jsonString:String) {
-        var data = jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+        let data = jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
         var error:NSError?
         
-        if let dataTemp = data {
-            var json:AnyObject? = NSJSONSerialization.JSONObjectWithData(data!, options: nil, error: &error)
+        if let _ = data {
+            var json:AnyObject?
+            do {
+                json = try NSJSONSerialization.JSONObjectWithData(data!, options: [])
+            } catch let error1 as NSError {
+                error = error1
+                json = nil
+            }
             
             if (error != nil) {
                 // println("Something went wrong during the creation of the json dict \(error)")
@@ -45,7 +51,7 @@ public class ROJSONObject {
     
     public func getValue(key:String) -> AnyObject {
         
-        var jsonValue = jsonData[key]
+        let jsonValue = jsonData[key]
         
         if (jsonValue.type == Type.Unknown || jsonValue.type == Type.Null) {
             return "null"
@@ -58,7 +64,7 @@ public class ROJSONObject {
         var elements = [T]()
         
         for jsonValue in getJSONValue(key).array! {
-            var element = (T.self as T.Type)()
+            let element = (T.self as T.Type).init()
             
             element.jsonData = jsonValue
             elements.append(element)
@@ -86,11 +92,11 @@ public class ROJSONObject {
             }
         } else {
             // If there hasnt been passed a specific NSDateFormatter us the ISO8601 standard
-            var isoDateFormats = ["yyyy-MM-dd'T'HH:mm:ssZZZ",
+            let isoDateFormats = ["yyyy-MM-dd'T'HH:mm:ssZZZ",
                 "yyyy-MM-dd'T'HH:mm:ssZZZZ",
                 "yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"]
             
-            var isoDateFormatter = NSDateFormatter()
+            let isoDateFormatter = NSDateFormatter()
             
             for isoDateFormat in isoDateFormats {
                 isoDateFormatter.dateFormat = isoDateFormat
@@ -121,7 +127,7 @@ public class Value<T> {
             var objects = [T]()
             
             for jsonValue in rojsonobject.jsonData.array! {
-                var object = (T.self as T.Type)()
+                let object = (T.self as T.Type).init()
                 object.jsonData = jsonValue
                 objects.append(object)
             }
@@ -134,7 +140,7 @@ public class Value<T> {
         if let dateParsed = rojsonobject.getDate(key, dateFormatter:dateFormatter) {
             return dateParsed
         } else {
-            println("Could not parse the date correctly. Returning nil")
+            print("Could not parse the date correctly. Returning nil")
             return nil
         }
     }

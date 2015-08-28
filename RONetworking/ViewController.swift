@@ -14,27 +14,27 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        var baseWebservice:BaseWebservice = BaseWebservice();
+        let baseWebservice:BaseWebservice = BaseWebservice();
         
-        var urlToJSON = "http://prine.ch/employeesWithout.json"
+        let urlToJSON = "http://prine.ch/employeesWithout.json"
         
-        var callbackReports = {(status:Int, employeeContainer:EmployeeContainer) -> () in
+        let callbackReports = {(status:Int, employeeContainer:EmployeeContainer) -> () in
             
             if (status == 200) {
-                println(employeeContainer.employees[0].firstname)
-                println(employeeContainer.employees[0].lastname)
+                print(employeeContainer.employees[0].firstname)
+                print(employeeContainer.employees[0].lastname)
                 
-                println("Firstname: " + employeeContainer.employees[0].firstname)
-                println("Lastname: " + employeeContainer.employees[0].firstname)
-                println("Age: \(employeeContainer.employees[0].age)")
+                print("Firstname: " + employeeContainer.employees[0].firstname)
+                print("Lastname: " + employeeContainer.employees[0].firstname)
+                print("Age: \(employeeContainer.employees[0].age)")
                 
             } else {
-                println("Retrieving data from Service failed with status code \(status)")
+                print("Retrieving data from Service failed with status code \(status)")
             }
         }
         
         baseWebservice.getROJSONObject(urlToJSON, callback: callbackReports, roError:{ (errorObject) -> () in
-            println(errorObject.log())
+            print(errorObject.log())
         })
 
     }

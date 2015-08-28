@@ -15,7 +15,6 @@
 		CB929AF61B579F5E00962DEA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB929AF41B579F5E00962DEA /* LaunchScreen.xib */; };
 		CB929B021B579F5F00962DEA /* RONetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB929B011B579F5F00962DEA /* RONetworkingTests.swift */; };
 		CB929B0E1B57A0CC00962DEA /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = CB929B0B1B57A0CC00962DEA /* LICENSE */; };
-		CB929B0F1B57A0CC00962DEA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CB929B0C1B57A0CC00962DEA /* README.md */; };
 		CB929B101B57A0CC00962DEA /* RONetworking.podspec in Resources */ = {isa = PBXBuildFile; fileRef = CB929B0D1B57A0CC00962DEA /* RONetworking.podspec */; };
 		CB929B141B57A22E00962DEA /* BaseWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB929B121B57A22E00962DEA /* BaseWebservice.swift */; };
 		CB929B151B57A22E00962DEA /* ROJSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB929B131B57A22E00962DEA /* ROJSONObject.swift */; };
@@ -53,7 +52,7 @@
 		CB929B0D1B57A0CC00962DEA /* RONetworking.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RONetworking.podspec; sourceTree = "<group>"; };
 		CB929B121B57A22E00962DEA /* BaseWebservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseWebservice.swift; path = Source/BaseWebservice.swift; sourceTree = SOURCE_ROOT; };
 		CB929B131B57A22E00962DEA /* ROJSONObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ROJSONObject.swift; path = Source/ROJSONObject.swift; sourceTree = SOURCE_ROOT; };
-		CB929B161B57A67000962DEA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		CB929B161B57A67000962DEA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CB929B1C1B57BA3000962DEA /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		CB929B1D1B57BA3000962DEA /* EmployeeContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,7 +214,9 @@
 		CB929ADE1B579F5E00962DEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Rascor International AG";
 				TargetAttributes = {
 					CB929AE51B579F5E00962DEA = {
@@ -322,7 +323,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB929B0F1B57A0CC00962DEA /* README.md in Sources */,
 				CB929B1E1B57BA3000962DEA /* Employee.swift in Sources */,
 				CB929B1F1B57BA3000962DEA /* EmployeeContainer.swift in Sources */,
 				CB929B141B57A22E00962DEA /* BaseWebservice.swift in Sources */,
@@ -391,6 +391,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -460,6 +461,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RONetworking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rascor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -471,6 +473,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RONetworking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rascor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -489,6 +492,7 @@
 				);
 				INFOPLIST_FILE = RONetworkingTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rascor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RONetworking.app/RONetworking";
 			};
@@ -504,6 +508,7 @@
 				);
 				INFOPLIST_FILE = RONetworkingTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rascor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RONetworking.app/RONetworking";
 			};
