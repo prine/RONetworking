@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
 s.name             = "RONetworking"
-s.version          = "1.0.3"
+s.version          = "2.0.0"
 s.summary          = "Networking methods and JSON Mapping"
 s.description      = <<-DESC
 Some functions to make the usage of an external Webservice easier. It also contain a JSON Object mapper which maches
@@ -33,5 +33,5 @@ s.resource_bundles = {
 # s.public_header_files = 'Pod/Classes/**/*.h'
 # s.frameworks = 'UIKit', 'MapKit'
 s.dependency 'Alamofire'
-s.dependency 'SwiftyJSON', '~> 2.2.0'
+s.dependency 'SwiftyJSON'
 end
