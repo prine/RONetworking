@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
 s.name             = "RONetworking"
-s.version          = "2.0.0"
+s.version          = "2.0.1"
 s.summary          = "Networking methods and JSON Mapping"
 s.description      = <<-DESC
 Some functions to make the usage of an external Webservice easier. It also contain a JSON Object mapper which maches
