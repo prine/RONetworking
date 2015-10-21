@@ -49,16 +49,14 @@ public class BaseWebservice {
             
             let plainString = "\(username!):\(password!)"
             let plainData = (plainString as NSString).dataUsingEncoding(NSUTF8StringEncoding)
-            
-            // FIXME: Not sure if this is the correct solution
             let base64String = plainData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
             
             Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders = ["Authorization": "Basic " + base64String!]
         }
         
-        Alamofire.request(.GET, urlString, parameters: parameters).responseJSON { (request, response, JSON) -> Void in
-            if let response = response {
-                callback(response.statusCode, JSON.value)
+        Alamofire.request(.GET, urlString, parameters: parameters).responseJSON { response in
+            if response.result.isSuccess {
+                callback((response.response?.statusCode)!, response.result.value)
             } else {
                 if let roError = roError {
                     roError(errorObject:ROError(errorType: ROErrorType.RESPONSE_NOT_RECEIVED, statusCode:nil, errorMessage: "The webserver has not returned a response. There is no status code."))
