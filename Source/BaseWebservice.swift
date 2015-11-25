@@ -58,8 +58,14 @@ public class BaseWebservice {
             if response.result.isSuccess {
                 callback((response.response?.statusCode)!, response.result.value)
             } else {
-                if let roError = roError {
-                    roError(errorObject:ROError(errorType: ROErrorType.RESPONSE_NOT_RECEIVED, statusCode:nil, errorMessage: "The webserver has not returned a response. There is no status code."))
+                
+                // If there is a response status code do not throw the error
+                if let responseStatusCode = response.response?.statusCode {
+                    callback(responseStatusCode, response.result.value)
+                } else {
+                    if let roError = roError {
+                        roError(errorObject:ROError(errorType: ROErrorType.RESPONSE_NOT_RECEIVED, statusCode:nil, errorMessage: "The webserver has not returned a response. There is no status code."))
+                    }
                 }
             }
         }
@@ -84,7 +90,6 @@ public class BaseWebservice {
                     roError(errorObject:ROError(errorType: ROErrorType.RESPONSE_NOT_RECEIVED, statusCode:status, errorMessage: "The webserver has not returned a response. There is no status code."))
                 }
             }
-
         }
         
         self.get(urlString, callback: webserviceCallback, parameters: parameters, username: username, password: password, roError:roError)
