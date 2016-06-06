@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import SwiftyJSON
 
 public enum ROErrorType:String {
     case REQUEST_ERROR = "Request error"
@@ -93,6 +94,44 @@ public class BaseWebservice {
         }
         
         self.get(urlString, callback: webserviceCallback, parameters: parameters, username: username, password: password, roError:roError)
+    }
+    
+    /**
+     Generic get array method which creates automatically the Array containing ROJSONObjects from the given JSON response (and optional with authentication)
+     
+     - parameter urlString:String:                            Url to the REST webservice entry
+     - parameter callback:(Int,: Array<T>) -> ()              Callback block gets called when the operation has finished (including a status code and the created Array of ROJSONObjects)
+     - parameter username:String?:                            Optional username for authentication (Default = nil)
+     - parameter password:String?:                            Optional password for authentication (Default = nil)
+     - parameter roError:((errorObject:ROError): -> ())?      Optional Error block which receives an ROError object containing additional information
+     */
+    public func getArray<T:ROJSONObject>(urlString:String, callback: (Int, Array<T>) -> (), parameters:[String : AnyObject!]? = nil, username:String? = nil, password:String? = nil, roError:((errorObject:ROError) -> ())? = nil) {
+        let webserviceCallback = {(status:Int, response:AnyObject?) -> () in
+            var elements = [T]()
+            
+            if let jsonValue = response {
+                let json = JSON(jsonValue)
+                
+                if let jsonArray = json.array {
+                    for object in jsonArray {
+                        let element = (T.self as T.Type).init()
+                        
+                        element.jsonData = object
+                        elements.append(element)
+                    }
+                }
+                
+                callback(200, elements)
+            } else {
+                if let roError = roError {
+                    roError(errorObject:ROError(errorType: ROErrorType.RESPONSE_NOT_RECEIVED, statusCode:status, errorMessage: "The webserver has not returned a response. There is no status code."))
+                }
+                
+                callback(404, [])
+            }
+        }
+        
+        self.get(urlString, callback: webserviceCallback, parameters:parameters, username:username, password:password, roError:roError)
     }
     
     

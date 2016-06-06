@@ -36,7 +36,12 @@ class ViewController: UIViewController {
         baseWebservice.getROJSONObject(urlToJSON, callback: callbackReports, roError:{ (errorObject) -> () in
             print(errorObject.log())
         })
-
+        
+        baseWebservice.getArray(urlToJSON, callback: { (status, employees:Array<Employee>) in
+            for employee in employees {
+                print("Firstname with Array: \(employee.firstname)")
+            }
+        })
     }
 
     override func didReceiveMemoryWarning() {
