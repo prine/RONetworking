@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SwiftyJSON
+import SwiftyJSON3
 
 open class ROJSONObject {
     

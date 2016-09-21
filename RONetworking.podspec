@@ -17,5 +17,7 @@ Pod::Spec.new do |spec|
     spec.source       = { :git => 'https://gitlab.com/rascor-apps/RONetworking.git', :tag => "2.1.0" }
     spec.source_files = 'Source/**/*'
     spec.framework    = 'SystemConfiguration'
-    spec.ios.deployment_target  = '8.4'
+    spec.ios.deployment_target  = '9.0'
+    spec.dependency 'Alamofire', '~> 4.0'
+    spec.dependency 'SwiftyJSON3', '~> 3.0.0-beta.1'
 end

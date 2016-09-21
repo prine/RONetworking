@@ -4,6 +4,6 @@ use_frameworks!
 
 target 'RONetworking' do
     pod 'Alamofire', '~> 4.0'
-    pod 'SwiftyJSON', :git => 'https://github.com/appsailor/SwiftyJSON.git', :branch => 'swift3'
+    pod 'SwiftyJSON3', '~> 3.0.0-beta.1'
 end
 
