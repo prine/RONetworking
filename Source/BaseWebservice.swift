@@ -25,7 +25,30 @@ public struct ROError {
     }
 }
 
-public class BaseWebservice {
+class AccessTokenAdapter: RequestAdapter {
+    private let username: String
+    private let password: String
+    
+    init(username: String, password: String) {
+        self.username = username
+        self.password = password
+    }
+    
+    func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
+        var urlRequest = urlRequest
+        
+        let plainString = "\(self.username):\(self.password)"
+        let plainData = (plainString as NSString).data(using: String.Encoding.utf8.rawValue)
+        if let base64String = plainData?.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters) {
+            urlRequest.setValue("Basic " + base64String, forHTTPHeaderField: "Authorization")
+        }
+        
+        return urlRequest
+    }
+}
+
+
+open class BaseWebservice {
     
     
     /**
@@ -39,23 +62,22 @@ public class BaseWebservice {
     Get method for fetching the data from the webservice (and optional with authentication)
     
     - parameter urlString:String:                            Urlto the REST webservice entry
-    - parameter callback:(Int,: AnyObject?) -> ()            Callback block gets called when the operation has finished (including a status code and the created JSON AnyObject? Tree)
+    - parameter callback:(Int,: Any?) -> ()                  Callback block gets called when the operation has finished (including a status code and the created JSON Any? Tree)
     - parameter username:String?:                            Optional username for authentication (Default = nil)
     - parameter password:String?:                            Optional password for authentication (Default = nil)
     - parameter roError:((errorObject:ROError): -> ())?      Optional Error block which receives an ROError object containing additional information
     */
-    public func get(urlString:String, callback:(Int, AnyObject?) -> (), parameters:[String : AnyObject!]? = nil, username:String? = nil, password:String? = nil, roError:((errorObject:ROError) -> ())? = nil) {
+    open func get(_ urlString:String, callback:@escaping (Int, Any?) -> (), parameters:[String : AnyObject?]? = nil, username:String? = nil, password:String? = nil, roError:((_ errorObject:ROError) -> ())? = nil) {
+    
+        let sessionManager = Alamofire.SessionManager.default
         
-        if (username != nil && password != nil) { // is there a username, the authorization header will be inserted an proper encoded
-            
-            let plainString = "\(username!):\(password!)"
-            let plainData = (plainString as NSString).dataUsingEncoding(NSUTF8StringEncoding)
-            let base64String = plainData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
-            
-            Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders = ["Authorization": "Basic " + base64String!]
+        // is there a username, the authorization header will be inserted an proper encoded
+        if let username = username, let password = password {
+            sessionManager.adapter = AccessTokenAdapter(username: username, password: password)
         }
         
-        Alamofire.request(.GET, urlString, parameters: parameters).responseJSON { response in
+        sessionManager.request(urlString, parameters: parameters).responseJSON { response in
+
             if response.result.isSuccess {
                 callback((response.response?.statusCode)!, response.result.value)
             } else {
@@ -65,7 +87,7 @@ public class BaseWebservice {
                     callback(responseStatusCode, response.result.value)
                 } else {
                     if let roError = roError {
-                        roError(errorObject:ROError(errorType: ROErrorType.RESPONSE_NOT_RECEIVED, statusCode:nil, errorMessage: "The webserver has not returned a response. There is no status code."))
+                        roError(ROError(errorType: ROErrorType.RESPONSE_NOT_RECEIVED, statusCode:nil, errorMessage: "The webserver has not returned a response. There is no status code."))
                     }
                 }
             }
@@ -81,14 +103,14 @@ public class BaseWebservice {
     - parameter password:String?:                            Optional password for authentication (Default = nil)
     - parameter roError:((errorObject:ROError): -> ())?      Optional Error block which receives an ROError object containing additional information
     */
-    public func getROJSONObject<T:ROJSONObject>(urlString:String, callback: (Int, T) -> (), parameters:[String : AnyObject!]? = nil, username:String? = nil,password:String? = nil, roError:((errorObject:ROError) -> ())? = nil) {
+    open func getROJSONObject<T:ROJSONObject>(_ urlString:String, callback: @escaping (Int, T) -> (), parameters:[String : AnyObject?]? = nil, username:String? = nil,password:String? = nil, roError:((_ errorObject:ROError) -> ())? = nil) {
         
-        let webserviceCallback = {(status:Int, response:AnyObject?) -> () in
-            if let response:AnyObject = response {
-                callback(status, (T.self as T.Type).init(jsonData: response))
+        let webserviceCallback = {(status:Int, response:Any?) -> () in
+            if let response = response {
+                callback(status, (T.self as T.Type).init(jsonData: response as AnyObject))
             } else {
                 if let roError = roError {
-                    roError(errorObject:ROError(errorType: ROErrorType.RESPONSE_NOT_RECEIVED, statusCode:status, errorMessage: "The webserver has not returned a response. There is no status code."))
+                    roError(ROError(errorType: ROErrorType.RESPONSE_NOT_RECEIVED, statusCode:status, errorMessage: "The webserver has not returned a response. There is no status code."))
                 }
             }
         }
@@ -105,8 +127,8 @@ public class BaseWebservice {
      - parameter password:String?:                            Optional password for authentication (Default = nil)
      - parameter roError:((errorObject:ROError): -> ())?      Optional Error block which receives an ROError object containing additional information
      */
-    public func getArray<T:ROJSONObject>(urlString:String, callback: (Int, Array<T>) -> (), parameters:[String : AnyObject!]? = nil, username:String? = nil, password:String? = nil, roError:((errorObject:ROError) -> ())? = nil) {
-        let webserviceCallback = {(status:Int, response:AnyObject?) -> () in
+    open func getArray<T:ROJSONObject>(_ urlString:String, callback: @escaping (Int, Array<T>) -> (), parameters:[String : AnyObject?]? = nil, username:String? = nil, password:String? = nil, roError:((_ errorObject:ROError) -> ())? = nil) {
+        let webserviceCallback = {(status:Int, response:Any?) -> () in
             var elements = [T]()
             
             if let jsonValue = response {
@@ -124,7 +146,7 @@ public class BaseWebservice {
                 callback(200, elements)
             } else {
                 if let roError = roError {
-                    roError(errorObject:ROError(errorType: ROErrorType.RESPONSE_NOT_RECEIVED, statusCode:status, errorMessage: "The webserver has not returned a response. There is no status code."))
+                    roError(ROError(errorType: ROErrorType.RESPONSE_NOT_RECEIVED, statusCode:status, errorMessage: "The webserver has not returned a response. There is no status code."))
                 }
                 
                 callback(404, [])
@@ -142,36 +164,36 @@ public class BaseWebservice {
     - parameter callback:(Int, String) -> ()                Callback block gets called when the operation has finished (including a status code and the JSON string)
     - parameter roError:((errorObject:ROError) -> ())?      Optional Error block which receives an ROError object containing additional information
     */
-    public func getString(urlString: String, callback: (Int, String) -> (), roError:((errorObject:ROError) -> ())? = nil) {
+    open func getString(_ urlString: String, callback: @escaping (Int, String) -> (), roError:((_ errorObject:ROError) -> ())? = nil) {
         
         // Make the asynchronous call
-        let sessionConfig = NSURLSessionConfiguration.ephemeralSessionConfiguration()
+        let sessionConfig = URLSessionConfiguration.ephemeral
         sessionConfig.timeoutIntervalForRequest = 60
         sessionConfig.timeoutIntervalForResource = 60
-        sessionConfig.requestCachePolicy = NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData
+        sessionConfig.requestCachePolicy = NSURLRequest.CachePolicy.reloadIgnoringLocalCacheData
         
-        let session = NSURLSession(configuration: sessionConfig)
+        let session = URLSession(configuration: sessionConfig)
         
-        let completionHandler = { (data: NSData?, urlResponse: NSURLResponse?, error: NSError?) -> () in
+        let completionHandler = { (data: Data?, urlResponse: URLResponse?, error: NSError?) -> () in
             
-            if let httpResponse = urlResponse as? NSHTTPURLResponse {
+            if let httpResponse = urlResponse as? HTTPURLResponse {
                 if(error == nil) {
-                    callback(httpResponse.statusCode, NSString(data: data!, encoding: NSUTF8StringEncoding)! as String)
+                    callback(httpResponse.statusCode, NSString(data: data!, encoding: String.Encoding.utf8.rawValue)! as String)
                 } else {
                     if let roError = roError {
-                        roError(errorObject:ROError(errorType: ROErrorType.REQUEST_ERROR, statusCode:httpResponse.statusCode, errorMessage: "Dealing with an invalid URL. Cannot send request to webserver"))
+                        roError(ROError(errorType: ROErrorType.REQUEST_ERROR, statusCode:httpResponse.statusCode, errorMessage: "Dealing with an invalid URL. Cannot send request to webserver"))
                     }
                 }
             }
         }
         
-        let url: NSURL? = NSURL(string : urlString)
+        let url: URL? = URL(string : urlString)
         
         if let _ = url {
-            session.dataTaskWithURL(url!, completionHandler: completionHandler).resume()
+            session.dataTask(with: url!, completionHandler: completionHandler as! (Data?, URLResponse?, Error?) -> Void).resume()
         } else {
             if let roError = roError {
-                roError(errorObject:ROError(errorType: ROErrorType.INVALID_URL_ERROR, statusCode:nil, errorMessage: "Dealing with an invalid URL. Cannot send request to webserver"))
+                roError(ROError(errorType: ROErrorType.INVALID_URL_ERROR, statusCode:nil, errorMessage: "Dealing with an invalid URL. Cannot send request to webserver"))
             }
         }
     }

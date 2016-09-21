@@ -13,7 +13,7 @@ class EmployeeContainer : ROJSONObject {
         super.init();
     }
     
-    required init(jsonData:AnyObject) {
+    public required init(jsonData: Any) {
         super.init(jsonData: jsonData)
     }
     
@@ -23,5 +23,5 @@ class EmployeeContainer : ROJSONObject {
     
     lazy var employees:[Employee] = {
         return Value<[Employee]>.getArray(self) as [Employee]
-        }()
+    }()
 }

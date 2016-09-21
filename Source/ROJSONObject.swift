@@ -9,26 +9,26 @@
 import Foundation
 import SwiftyJSON
 
-public class ROJSONObject {
+open class ROJSONObject {
     
-    public var jsonData:JSON
+    open var jsonData:JSON
 
     public required init() {
         jsonData = []
     }
     
-    public required init(jsonData:AnyObject) {
+    public required init(jsonData:Any) {
         self.jsonData = JSON(jsonData)
     }
     
     public required init(jsonString:String) {
-        let data = jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+        let data = jsonString.data(using: String.Encoding.utf8, allowLossyConversion: false)
         var error:NSError?
         
         if let _ = data {
-            var json:AnyObject?
+            var json:Any?
             do {
-                json = try NSJSONSerialization.JSONObjectWithData(data!, options: [])
+                json = try JSONSerialization.jsonObject(with: data!, options: [])
             } catch let error1 as NSError {
                 error = error1
                 json = nil
@@ -45,22 +45,22 @@ public class ROJSONObject {
         self.jsonData = JSON("")
     }
     
-    public func getJSONValue(key:String) -> JSON {
+    open func getJSONValue(_ key:String) -> JSON {
         return jsonData[key]
     }
     
-    public func getValue(key:String) -> AnyObject {
+    open func getValue(_ key:String) -> Any {
         
         let jsonValue = jsonData[key]
         
-        if (jsonValue.type == Type.Unknown || jsonValue.type == Type.Null) {
+        if (jsonValue.type == Type.unknown || jsonValue.type == Type.null) {
             return "null"
         }
 
         return jsonData[key].object
     }
     
-    public func getArray<T : ROJSONObject>(key:String) -> [T] {
+    open func getArray<T : ROJSONObject>(_ key:String) -> [T] {
         var elements = [T]()
         
         for jsonValue in getJSONValue(key).array! {
@@ -73,7 +73,7 @@ public class ROJSONObject {
         return elements
     }
     
-    func getDate(key:String, dateFormatter:NSDateFormatter? = nil) -> NSDate? {
+    func getDate(_ key:String, dateFormatter:DateFormatter? = nil) -> Date? {
         
         if let jsonString = jsonData[key].string {
             return parseDate(jsonString)
@@ -82,10 +82,10 @@ public class ROJSONObject {
         return nil
     }
     
-    func parseDate(string:String, dateFormatter:NSDateFormatter? = nil) -> NSDate? {
+    func parseDate(_ string:String, dateFormatter:DateFormatter? = nil) -> Date? {
         // Check if a dateParser has been passed or not
         if(dateFormatter != nil) {
-            if let parsedDate = dateFormatter!.dateFromString(string) {
+            if let parsedDate = dateFormatter!.date(from: string) {
                 return parsedDate
             } else {
                 return nil
@@ -96,12 +96,12 @@ public class ROJSONObject {
                 "yyyy-MM-dd'T'HH:mm:ssZZZZ",
                 "yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"]
             
-            let isoDateFormatter = NSDateFormatter()
+            let isoDateFormatter = DateFormatter()
             
             for isoDateFormat in isoDateFormats {
                 isoDateFormatter.dateFormat = isoDateFormat
                 
-                if let parsedDate = isoDateFormatter.dateFromString(string) {
+                if let parsedDate = isoDateFormatter.date(from: string) {
                     return parsedDate
                 }
             }
@@ -113,12 +113,12 @@ public class ROJSONObject {
 
 
 
-public class Value<T> {
-    public class func get(rojsonobject:ROJSONObject, key:String) -> T {
+open class Value<T> {
+    open class func get(_ rojsonobject:ROJSONObject, key:String) -> T {
         return rojsonobject.getValue(key) as! T
     }
     
-    public class func getArray<T : ROJSONObject>(rojsonobject:ROJSONObject, key:String? = nil) -> [T] {
+    open class func getArray<T : ROJSONObject>(_ rojsonobject:ROJSONObject, key:String? = nil) -> [T] {
         
         // If there is a key given fetch the array from the dictionary directly if not fetch all objects and pack it into an array
         if let dictKey = key {
@@ -136,7 +136,7 @@ public class Value<T> {
         }
     }
     
-    public class func getDate(rojsonobject:ROJSONObject, key:String, dateFormatter:NSDateFormatter? = nil) -> NSDate? {
+    open class func getDate(_ rojsonobject:ROJSONObject, key:String, dateFormatter:DateFormatter? = nil) -> Date? {
         if let dateParsed = rojsonobject.getDate(key, dateFormatter:dateFormatter) {
             return dateParsed
         } else {

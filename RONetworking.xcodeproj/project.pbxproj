@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		874BFE22CE5ECF8469098981 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B1D6CEB33C81DBFB0C7656 /* Pods.framework */; };
+		8BFE2819D2A3EEC261968A02 /* Pods_RONetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 514D4852C5E0DAD0D73D68AC /* Pods_RONetworking.framework */; };
 		CB929AEC1B579F5E00962DEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB929AEB1B579F5E00962DEA /* AppDelegate.swift */; };
 		CB929AEE1B579F5E00962DEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB929AED1B579F5E00962DEA /* ViewController.swift */; };
 		CB929AF11B579F5E00962DEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB929AEF1B579F5E00962DEA /* Main.storyboard */; };
@@ -34,9 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2459D3DD1D2128F9A010D1B8 /* Pods-RONetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RONetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-RONetworking/Pods-RONetworking.release.xcconfig"; sourceTree = "<group>"; };
+		514D4852C5E0DAD0D73D68AC /* Pods_RONetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RONetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B1D6CEB33C81DBFB0C7656 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		68E022118F02696CB5223E4B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		C951E269B633E3103BEBFEB1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CB929AE61B579F5E00962DEA /* RONetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RONetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB929AEA1B579F5E00962DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB929AEB1B579F5E00962DEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +55,7 @@
 		CB929B161B57A67000962DEA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CB929B1C1B57BA3000962DEA /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		CB929B1D1B57BA3000962DEA /* EmployeeContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeContainer.swift; sourceTree = "<group>"; };
+		E3853165692D97933EAAEA3B /* Pods-RONetworking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RONetworking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RONetworking/Pods-RONetworking.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				874BFE22CE5ECF8469098981 /* Pods.framework in Frameworks */,
+				8BFE2819D2A3EEC261968A02 /* Pods_RONetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,11 +77,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5F3268205BB369AD617B1BFA /* Pods */ = {
+		88E695024919E30917ED2BCF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C951E269B633E3103BEBFEB1 /* Pods.debug.xcconfig */,
-				68E022118F02696CB5223E4B /* Pods.release.xcconfig */,
+				E3853165692D97933EAAEA3B /* Pods-RONetworking.debug.xcconfig */,
+				2459D3DD1D2128F9A010D1B8 /* Pods-RONetworking.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -95,8 +96,8 @@
 				CB929AE81B579F5E00962DEA /* RONetworking */,
 				CB929AFE1B579F5F00962DEA /* RONetworkingTests */,
 				CB929AE71B579F5E00962DEA /* Products */,
-				5F3268205BB369AD617B1BFA /* Pods */,
 				DD2F33884CFFDDDEA7099D3E /* Frameworks */,
+				88E695024919E30917ED2BCF /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				66B1D6CEB33C81DBFB0C7656 /* Pods.framework */,
+				514D4852C5E0DAD0D73D68AC /* Pods_RONetworking.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -174,12 +176,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB929B051B579F5F00962DEA /* Build configuration list for PBXNativeTarget "RONetworking" */;
 			buildPhases = (
-				F1937C40441CD242656AD969 /* Check Pods Manifest.lock */,
+				80A9A13EEAF7EA21F1872816 /* [CP] Check Pods Manifest.lock */,
 				CB929AE21B579F5E00962DEA /* Sources */,
 				CB929AE31B579F5E00962DEA /* Frameworks */,
 				CB929AE41B579F5E00962DEA /* Resources */,
-				4CB1BF04FFF13C8E5558C5BB /* Embed Pods Frameworks */,
-				60CF6A58AFAB370F852D8488 /* Copy Pods Resources */,
+				2844895F5A82EEC2C29E4BA8 /* [CP] Embed Pods Frameworks */,
+				D7DCC3FF8F05286DD2EE69BE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -216,14 +218,17 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Rascor International AG";
 				TargetAttributes = {
 					CB929AE51B579F5E00962DEA = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 39J9X3JBYC;
+						LastSwiftMigration = 0800;
 					};
 					CB929AFA1B579F5F00962DEA = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0800;
 						TestTargetID = CB929AE51B579F5E00962DEA;
 					};
 				};
@@ -271,49 +276,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4CB1BF04FFF13C8E5558C5BB /* Embed Pods Frameworks */ = {
+		2844895F5A82EEC2C29E4BA8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RONetworking/Pods-RONetworking-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		60CF6A58AFAB370F852D8488 /* Copy Pods Resources */ = {
+		80A9A13EEAF7EA21F1872816 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		F1937C40441CD242656AD969 /* Check Pods Manifest.lock */ = {
+		D7DCC3FF8F05286DD2EE69BE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RONetworking/Pods-RONetworking-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -383,8 +388,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -429,8 +436,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -449,6 +458,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -456,27 +466,33 @@
 		};
 		CB929B061B579F5F00962DEA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C951E269B633E3103BEBFEB1 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = E3853165692D97933EAAEA3B /* Pods-RONetworking.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 39J9X3JBYC;
 				INFOPLIST_FILE = RONetworking/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rascor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		CB929B071B579F5F00962DEA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 68E022118F02696CB5223E4B /* Pods.release.xcconfig */;
+			baseConfigurationReference = 2459D3DD1D2128F9A010D1B8 /* Pods-RONetworking.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 39J9X3JBYC;
 				INFOPLIST_FILE = RONetworking/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rascor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -484,10 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -496,6 +509,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rascor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RONetworking.app/RONetworking";
 			};
 			name = Debug;
@@ -504,14 +518,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = RONetworkingTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rascor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RONetworking.app/RONetworking";
 			};
 			name = Release;

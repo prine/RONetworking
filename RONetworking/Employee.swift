@@ -14,10 +14,10 @@ class Employee : ROJSONObject {
         super.init();
     }
     
-    required init(jsonData:AnyObject) {
+    public required init(jsonData: Any) {
         super.init(jsonData: jsonData)
     }
-    
+
     required init(jsonString: String) {
         super.init(jsonString:jsonString)
     }
