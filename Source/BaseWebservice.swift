@@ -6,6 +6,9 @@
 //  Copyright (c) 2015 Rascor International AG. All rights reserved.
 //
 
+
+
+
 import Alamofire
 import SwiftyJSON3
 
@@ -67,7 +70,7 @@ open class BaseWebservice {
     - parameter password:String?:                            Optional password for authentication (Default = nil)
     - parameter roError:((errorObject:ROError): -> ())?      Optional Error block which receives an ROError object containing additional information
     */
-    open func get(_ urlString:String, callback:@escaping (Int, Any?) -> (), parameters:[String : AnyObject?]? = nil, username:String? = nil, password:String? = nil, roError:((_ errorObject:ROError) -> ())? = nil) {
+    open func get(_ urlString:String, callback:@escaping (Int, Any?) -> (), parameters:[String : Any]? = nil, username:String? = nil, password:String? = nil, roError:((_ errorObject:ROError) -> ())? = nil) {
     
         let sessionManager = Alamofire.SessionManager.default
         
@@ -103,7 +106,7 @@ open class BaseWebservice {
     - parameter password:String?:                            Optional password for authentication (Default = nil)
     - parameter roError:((errorObject:ROError): -> ())?      Optional Error block which receives an ROError object containing additional information
     */
-    open func getROJSONObject<T:ROJSONObject>(_ urlString:String, callback: @escaping (Int, T) -> (), parameters:[String : AnyObject?]? = nil, username:String? = nil,password:String? = nil, roError:((_ errorObject:ROError) -> ())? = nil) {
+    open func getROJSONObject<T:ROJSONObject>(_ urlString:String, callback: @escaping (Int, T) -> (), parameters:[String : Any]? = nil, username:String? = nil,password:String? = nil, roError:((_ errorObject:ROError) -> ())? = nil) {
         
         let webserviceCallback = {(status:Int, response:Any?) -> () in
             if let response = response {
@@ -127,7 +130,7 @@ open class BaseWebservice {
      - parameter password:String?:                            Optional password for authentication (Default = nil)
      - parameter roError:((errorObject:ROError): -> ())?      Optional Error block which receives an ROError object containing additional information
      */
-    open func getArray<T:ROJSONObject>(_ urlString:String, callback: @escaping (Int, Array<T>) -> (), parameters:[String : AnyObject?]? = nil, username:String? = nil, password:String? = nil, roError:((_ errorObject:ROError) -> ())? = nil) {
+    open func getArray<T:ROJSONObject>(_ urlString:String, callback: @escaping (Int, Array<T>) -> (), parameters:[String : Any]? = nil, username:String? = nil, password:String? = nil, roError:((_ errorObject:ROError) -> ())? = nil) {
         let webserviceCallback = {(status:Int, response:Any?) -> () in
             var elements = [T]()
             
