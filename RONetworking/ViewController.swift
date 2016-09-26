@@ -42,6 +42,10 @@ class ViewController: UIViewController {
                 print("Firstname with Array: \(employee.firstname)")
             }
         })
+        
+        baseWebservice.getString(urlToJSON, callback: { (status, jsonString) in
+          print("JSON String: \(jsonString)")
+        })
     }
 
     override func didReceiveMemoryWarning() {

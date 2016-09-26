@@ -177,28 +177,22 @@ open class BaseWebservice {
         
         let session = URLSession(configuration: sessionConfig)
         
-        let completionHandler = { (data: Data?, urlResponse: URLResponse?, error: NSError?) -> () in
-            
-            if let httpResponse = urlResponse as? HTTPURLResponse {
-                if(error == nil) {
-                    callback(httpResponse.statusCode, NSString(data: data!, encoding: String.Encoding.utf8.rawValue)! as String)
-                } else {
-                    if let roError = roError {
-                        roError(ROError(errorType: ROErrorType.REQUEST_ERROR, statusCode:httpResponse.statusCode, errorMessage: "Dealing with an invalid URL. Cannot send request to webserver"))
+        if let url = URL(string : urlString) {
+            session.dataTask(with: url, completionHandler: { (data, response, error) in
+                if let httpResponse = response as? HTTPURLResponse {
+                    if(error == nil) {
+                        callback(httpResponse.statusCode, NSString(data: data!, encoding: String.Encoding.utf8.rawValue)! as String)
+                    } else {
+                        if let roError = roError {
+                            roError(ROError(errorType: ROErrorType.REQUEST_ERROR, statusCode:httpResponse.statusCode, errorMessage: "Dealing with an invalid URL. Cannot send request to webserver"))
+                        }
                     }
                 }
-            }
-        }
-        
-        let url: URL? = URL(string : urlString)
-        
-        if let _ = url {
-            session.dataTask(with: url!, completionHandler: completionHandler as! (Data?, URLResponse?, Error?) -> Void).resume()
+            }).resume()
         } else {
             if let roError = roError {
                 roError(ROError(errorType: ROErrorType.INVALID_URL_ERROR, statusCode:nil, errorMessage: "Dealing with an invalid URL. Cannot send request to webserver"))
             }
         }
     }
-    
 }
