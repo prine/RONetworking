@@ -10,7 +10,7 @@
 
 
 import Alamofire
-import SwiftyJSON3
+import SwiftyJSON
 
 public enum ROErrorType:String {
     case REQUEST_ERROR = "Request error"
