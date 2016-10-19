@@ -4,6 +4,6 @@ use_frameworks!
 
 target 'RONetworking' do
     pod 'Alamofire', '~> 4.0'
-    pod 'SwiftyJSON3', '~> 3.0.0-beta.1'
+    pod 'SwiftyJSON', '3.0.0'
 end
 

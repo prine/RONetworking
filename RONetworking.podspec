@@ -14,10 +14,10 @@ Pod::Spec.new do |spec|
     spec.homepage     = 'https://gitlab.com/rascor-apps/RONetworking'
     spec.authors      = { 'Robin Oster' => 'robin.oster@rascor.com' }
     spec.summary      = 'Networking methods and JSON Mapping'
-    spec.source       = { :git => 'https://gitlab.com/rascor-apps/RONetworking.git', :tag => "2.1.1" }
+    spec.source       = { :git => 'https://gitlab.com/rascor-apps/RONetworking.git', :tag => "2.1.2" }
     spec.source_files = 'Source/**/*'
     spec.framework    = 'SystemConfiguration'
     spec.ios.deployment_target  = '9.0'
     spec.dependency 'Alamofire', '~> 4.0'
-    spec.dependency 'SwiftyJSON3', '~> 3.0.0-beta.1'
+    spec.dependency 'SwiftyJSON', '~> 3.0.0'
 end
