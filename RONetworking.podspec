@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |spec|
     spec.name         = 'RONetworking'
-    spec.version      = '2.1.2'
+    spec.version      = '2.1.4'
     spec.license      = { :type => 'MIT' }
     spec.homepage     = 'https://gitlab.com/rascor-apps/RONetworking'
     spec.authors      = { 'Robin Oster' => 'robin.oster@rascor.com' }
