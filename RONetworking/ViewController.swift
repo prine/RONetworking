@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         
         let baseWebservice:BaseWebservice = BaseWebservice();
         
-        let urlToJSON = "http://prine.ch/employeesWithout.json"
+        let urlToJSON = "http://prine.ch/external/RONetworking/employeesWithout.json"
         
         let callbackReports = {(status:Int, employeeContainer:EmployeeContainer) -> () in
             
