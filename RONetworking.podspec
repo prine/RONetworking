@@ -11,10 +11,10 @@ Pod::Spec.new do |spec|
     spec.name         = 'RONetworking'
     spec.version      = '2.1.5'
     spec.license      = { :type => 'MIT' }
-    spec.homepage     = 'https://gitlab.com/rascor-apps/RONetworking'
+    spec.homepage     = 'https://github.com/prine/RONetworking'
     spec.authors      = { 'Robin Oster' => 'robin.oster@rascor.com' }
-    spec.summary      = 'Networking methods and JSON Mapping'
-    spec.source       = { :git => 'https://gitlab.com/rascor-apps/RONetworking.git', :tag => "2.1.5" }
+    spec.summary      = 'A generic webservice implementation including made easy object mapping with JSON responses'
+    spec.source       = { :git => 'https://github.com/prine/RONetworking.git', :tag => "2.1.5" }
     spec.source_files = 'Source/**/*'
     spec.framework    = 'SystemConfiguration'
     spec.ios.deployment_target  = '9.0'
