@@ -67,6 +67,19 @@ class Employee : ROJSONObject {
 }
 ```
 
+Then to actually map the objects from the JSON response you only have to pass the data into the Employee class as param in the constructor. It does automatically create your data model.
+```swift
+var urlToJSON = "http://prine.ch/employeesWithout.json"
+
+baseWebservice.getArray(urlToJSON, callback: { (status, employees:Array<Employee>) in
+    for employee in employees {
+        print("Firstname with Array: \(employee.firstname)")
+    }
+})
+```
+
+Or if you have an key containing the array you can use a container class:
+
 EmployeeContainer.swift
 ```swift
 class EmployeeContainer : ROJSONObject {
@@ -87,8 +100,6 @@ class EmployeeContainer : ROJSONObject {
     }()
 }
 ```
-
-Then to actually map the objects from the JSON response you only have to pass the data into the EmployeeContainer class as param in the constructor. It does automatically create your data model.
 
 ```swift
   var baseWebservice:BaseWebservice = BaseWebservice();
@@ -122,7 +133,7 @@ Age: 26
 ```
 The MIT License (MIT)
 
-Copyright (c) 2015 Robin Oster (http://prine.ch)
+Copyright (c) 2016 Robin Oster (http://prine.ch)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
