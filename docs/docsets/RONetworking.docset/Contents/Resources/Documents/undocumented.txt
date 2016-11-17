@@ -1,0 +1,53 @@
+Employee.swift
+	class Employee : ROJSONObject
+	required init()
+	required init(jsonData:AnyObject)
+	required init(jsonString: String)
+	var firstname:String
+	var lastname:String
+	var age:Int
+EmployeeContainer.swift
+	class EmployeeContainer : ROJSONObject
+	required init()
+	required init(jsonData:AnyObject)
+	required init(jsonString: String)
+	lazy var employees:[Employee] =
+BaseWebservice.swift
+	public enum ROErrorType:String
+	case REQUEST_ERROR = "Request error"
+	case INVALID_URL_ERROR = "Invalid url error"
+	case RESPONSE_NOT_RECEIVED = "Response not received"
+	public struct ROError
+	var errorType:ROErrorType
+	var statusCode:Int?
+	var errorMessage:String
+	public func log() -> String
+	public class BaseWebservice
+ViewController.swift
+	class ViewController: UIViewController
+	override func viewDidLoad()
+	override func didReceiveMemoryWarning()
+AppDelegate.swift
+	class AppDelegate: UIResponder, UIApplicationDelegate
+	var window: UIWindow?
+	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+	func applicationWillResignActive(application: UIApplication)
+	func applicationDidEnterBackground(application: UIApplication)
+	func applicationWillEnterForeground(application: UIApplication)
+	func applicationDidBecomeActive(application: UIApplication)
+	func applicationWillTerminate(application: UIApplication)
+ROJSONObject.swift
+	public class ROJSONObject
+	public var jsonData:JSON
+	public required init()
+	public required init(jsonData:AnyObject)
+	public required init(jsonString:String)
+	public func getJSONValue(key:String) -> JSON
+	public func getValue(key:String) -> AnyObject
+	public func getArray<T : ROJSONObject>(key:String) -> [T]
+	func getDate(key:String, dateFormatter:NSDateFormatter? = nil) -> NSDate?
+	func parseDate(string:String, dateFormatter:NSDateFormatter? = nil) -> NSDate?
+	public class Value<T>
+	public class func get(rojsonobject:ROJSONObject, key:String) -> T
+	public class func getArray<T : ROJSONObject>(rojsonobject:ROJSONObject, key:String? = nil) -> [T]
+	public class func getDate(rojsonobject:ROJSONObject, key:String, dateFormatter:NSDateFormatter? = nil) -> NSDate?

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BaseWebservice Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/BaseWebservice" class="dashAnchor"></a>
+    <a title="BaseWebservice Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">RONetworking Docs</a> (7% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">RONetworking Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        BaseWebservice Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BaseWebservice.html">BaseWebservice</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Employee.html">Employee</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmployeeContainer.html">EmployeeContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ROJSONObject.html">ROJSONObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Value.html">Value</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ViewController.html">ViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/ROErrorType.html">ROErrorType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/ROError.html">ROError</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>BaseWebservice</h1>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC12RONetworking14BaseWebservicecFMS0_FT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC12RONetworking14BaseWebservicecFMS0_FT_S0_">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initial constructor</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC12RONetworking14BaseWebservice3getFS0_FTSS8callbackFTSiGSqPSs9AnyObject___T_10parametersGSqGVSs10DictionarySSGSQPS1_____8usernameGSqSS_8passwordGSqSS_7roErrorGSqFT11errorObjectVS_7ROError_T___T_"></a>
+                    <a name="//apple_ref/swift/Method/get(_:callback:parameters:username:password:roError:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC12RONetworking14BaseWebservice3getFS0_FTSS8callbackFTSiGSqPSs9AnyObject___T_10parametersGSqGVSs10DictionarySSGSQPS1_____8usernameGSqSS_8passwordGSqSS_7roErrorGSqFT11errorObjectVS_7ROError_T___T_">get(_:callback:parameters:username:password:roError:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get method for fetching the data from the webservice (and optional with authentication)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">get</span><span class="p">(</span><span class="nv">urlString</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:(</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">AnyObject</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">(),</span> <span class="nv">parameters</span><span class="p">:[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">AnyObject</span><span class="o">!</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">username</span><span class="p">:</span><span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span><span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">roError</span><span class="p">:((</span><span class="nv">errorObject</span><span class="p">:</span><span class="kt">ROError</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>urlString</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String:                            Urlto the REST webservice entry</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>(Int,: AnyObject?) -&gt; ()            Callback block gets called when the operation has finished (including a status code and the created JSON AnyObject? Tree)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>username</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String?:                            Optional username for authentication (Default = nil)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>password</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String?:                            Optional password for authentication (Default = nil)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>roError</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>((errorObject:ROError): -&gt; ())?      Optional Error block which receives an ROError object containing additional information</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC12RONetworking14BaseWebservice15getROJSONObjectuRdq_CS_12ROJSONObject_FS0_FTSS8callbackFTSiq__T_10parametersGSqGVSs10DictionarySSGSQPSs9AnyObject____8usernameGSqSS_8passwordGSqSS_7roErrorGSqFT11errorObjectVS_7ROError_T___T_"></a>
+                    <a name="//apple_ref/swift/Method/getROJSONObject(_:callback:parameters:username:password:roError:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC12RONetworking14BaseWebservice15getROJSONObjectuRdq_CS_12ROJSONObject_FS0_FTSS8callbackFTSiq__T_10parametersGSqGVSs10DictionarySSGSQPSs9AnyObject____8usernameGSqSS_8passwordGSqSS_7roErrorGSqFT11errorObjectVS_7ROError_T___T_">getROJSONObject(_:callback:parameters:username:password:roError:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Generic get method which creates automatically the ROJSONObjects from the given JSON response (and optional with authentication)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">getROJSONObject</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span><span class="kt">ROJSONObject</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">urlString</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(),</span> <span class="nv">parameters</span><span class="p">:[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">AnyObject</span><span class="o">!</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">username</span><span class="p">:</span><span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span><span class="nv">password</span><span class="p">:</span><span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">roError</span><span class="p">:((</span><span class="nv">errorObject</span><span class="p">:</span><span class="kt">ROError</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>urlString</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String:                            Url to the REST webservice entry</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>(Int,: T) -&gt; ()                     Callback block gets called when the operation has finished (including a status code and the created ROJSONObject)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>username</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String?:                            Optional username for authentication (Default = nil)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>password</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String?:                            Optional password for authentication (Default = nil)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>roError</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>((errorObject:ROError): -&gt; ())?      Optional Error block which receives an ROError object containing additional information</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC12RONetworking14BaseWebservice9getStringFS0_FTSS8callbackFTSiSS_T_7roErrorGSqFT11errorObjectVS_7ROError_T___T_"></a>
+                    <a name="//apple_ref/swift/Method/getString(_:callback:roError:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC12RONetworking14BaseWebservice9getStringFS0_FTSS8callbackFTSiSS_T_7roErrorGSqFT11errorObjectVS_7ROError_T___T_">getString(_:callback:roError:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the untreated JSON string (not a JSON object tree)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getString</span><span class="p">(</span><span class="nv">urlString</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(),</span> <span class="nv">roError</span><span class="p">:((</span><span class="nv">errorObject</span><span class="p">:</span><span class="kt">ROError</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>urlString</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String                            Urlto the REST webservice entry</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>(Int, String) -&gt; ()                Callback block gets called when the operation has finished (including a status code and the JSON string)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>roError</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>((errorObject:ROError) -&gt; ())?      Optional Error block which receives an ROError object containing additional information</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2015 <a class="link" href="https://gitlab.com/rascor-apps/RONetworking" target="_blank" rel="external">Robin Oster</a>. All rights reserved. (Last updated: 2015-12-21)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.4.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

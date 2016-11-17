@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RONetworking  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+  </head>
+  <body>
+    <a title="RONetworking  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">RONetworking Docs</a> (7% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">RONetworking Reference</a>
+        <img id="carat" src="img/carat.png" />
+        RONetworking  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/BaseWebservice.html">BaseWebservice</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Employee.html">Employee</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/EmployeeContainer.html">EmployeeContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ROJSONObject.html">ROJSONObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Value.html">Value</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ViewController.html">ViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/ROErrorType.html">ROErrorType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/ROError.html">ROError</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <a href='#ronetworking' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='ronetworking'>RONetworking</h1>
+
+<p>Is a very light-weight and straighforward JSON to object mapper. You can define your class structure and directly
+define in there your accessed properties in the JSON file. The whole parsing of the JSON file is done by the library SwiftyJSON <a href="https://github.com/SwiftyJSON/SwiftyJSON">https://github.com/SwiftyJSON/SwiftyJSON</a>.</p>
+<a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
+
+<p>RONetworking is available through <a href="http://cocoapods.org">CocoaPods</a>. To install
+it, simply add the following line to your Podfile:</p>
+<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s2">"RONetworking"</span>
+</code></pre>
+<a href='#how_to_use' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='how_to_use'>How to use</h2>
+
+<p>Example Employees.json</p>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="err">[{</span><span class="w">
+    </span><span class="nt">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="w">
+  </span><span class="p">}</span><span class="err">,</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Anna"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="w">
+  </span><span class="p">}</span><span class="err">,</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peter"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jones"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="w">
+  </span><span class="p">}</span><span class="err">]</span><span class="w">
+</span><span class="err">}</span><span class="w">
+</span></code></pre>
+
+<p>As next step you have to create your data model (EmplyoeeContainer and Employee).</p>
+
+<p>Employee.swift
+&ldquo;``swift
+class Employee : ROJSONObject {</p>
+<pre class="highlight plaintext"><code>required init() {
+    super.init();
+}
+
+required init(jsonData:AnyObject) {
+    super.init(jsonData: jsonData)
+}
+
+required init(jsonString: String) {
+    super.init(jsonString:jsonString)
+}
+
+var firstname:String {
+    return Value&lt;String&gt;.get(self, key: "firstName")
+}
+
+var lastname:String {
+    return Value&lt;String&gt;.get(self, key: "lastName")
+}
+
+var age:Int {
+    return Value&lt;Int&gt;.get(self, key: "age")
+}
+</code></pre>
+
+<p>}
+&rdquo;`</p>
+
+<p>EmployeeContainer.swift
+&ldquo;`swift
+class EmployeeContainer : ROJSONObject {
+    required init() {
+        super.init();
+    }</p>
+<pre class="highlight plaintext"><code>required init(jsonData:AnyObject) {
+    super.init(jsonData: jsonData)
+}
+
+required init(jsonString: String) {
+    super.init(jsonString:jsonString)
+}
+
+lazy var employees:[Employee] = {
+    return Value&lt;[Employee]&gt;.getArray(self) as [Employee]
+}()
+</code></pre>
+
+<p>}
+&rdquo;`</p>
+
+<p>Then to actually map the objects from the JSON response you only have to pass the data into the EmployeeContainer class as param in the constructor. It does automatically create your data model.</p>
+<pre class="highlight swift"><code>  <span class="k">var</span> <span class="nv">baseWebservice</span><span class="p">:</span><span class="kt">BaseWebservice</span> <span class="o">=</span> <span class="kt">BaseWebservice</span><span class="p">();</span>
+
+  <span class="k">var</span> <span class="nv">urlToJSON</span> <span class="o">=</span> <span class="s">"http://prine.ch/employeesWithout.json"</span>
+
+  <span class="n">baseWebservice</span><span class="o">.</span><span class="nf">get</span><span class="p">(</span><span class="n">urlToJSON</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="nv">employeeContainer</span><span class="p">:</span><span class="kt">EmployeeContainer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">()</span> <span class="k">in</span>
+      <span class="nf">println</span><span class="p">(</span><span class="n">employeeContainer</span><span class="o">.</span><span class="n">employees</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">firstname</span><span class="p">)</span>
+      <span class="nf">println</span><span class="p">(</span><span class="n">employeeContainer</span><span class="o">.</span><span class="n">employees</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lastname</span><span class="p">)</span>
+
+      <span class="nf">println</span><span class="p">(</span><span class="s">"Firstname: "</span> <span class="o">+</span> <span class="n">employeeContainer</span><span class="o">.</span><span class="n">employees</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">firstname</span><span class="p">)</span>
+      <span class="nf">println</span><span class="p">(</span><span class="s">"Lastname: "</span> <span class="o">+</span> <span class="n">employeeContainer</span><span class="o">.</span><span class="n">employees</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">firstname</span><span class="p">)</span>
+      <span class="nf">println</span><span class="p">(</span><span class="s">"Age: </span><span class="se">\(</span><span class="n">employeeContainer</span><span class="o">.</span><span class="n">employees</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">age</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+
+  <span class="p">})</span>
+</code></pre>
+
+<p>The console output looks then like the following:</p>
+<pre class="highlight plaintext"><code>John
+Doe
+Firstname: John
+Lastname: John
+Age: 26
+</code></pre>
+<a href='#license' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='license'>License</h2>
+<pre class="highlight plaintext"><code>The MIT License (MIT)
+
+Copyright (c) 2015 Robin Oster (http://prine.ch)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+</code></pre>
+<a href='#author' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='author'>Author</h2>
+
+<p>Robin Oster, <a href="mailto:robin.oster@rascor.com">robin.oster@rascor.com</a></p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2015 <a class="link" href="https://gitlab.com/rascor-apps/RONetworking" target="_blank" rel="external">Robin Oster</a>. All rights reserved. (Last updated: 2015-12-21)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.4.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
