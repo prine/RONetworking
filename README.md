@@ -78,7 +78,7 @@ baseWebservice.getArray(urlToJSON, callback: { (status, employees:Array<Employee
 })
 ```
 
-Or if you have an key containing the array you can use a container class:
+Or if you want to store it in a container:
 
 EmployeeContainer.swift
 ```swift
