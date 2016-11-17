@@ -16,8 +16,8 @@ pod "RONetworking"
 Example Employees.json
 
 ```json
-{
-  [{
+[
+  {
     "firstName": "John",
     "lastName": "Doe",
     "age": 26
@@ -31,8 +31,8 @@ Example Employees.json
     "firstName": "Peter",
     "lastName": "Jones",
     "age": 45
-  }]
-}
+  }
+]
 ```
 
 As next step you have to create your data model (EmplyoeeContainer and Employee).
