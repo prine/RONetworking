@@ -218,7 +218,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Rascor International AG";
 				TargetAttributes = {
 					CB929AE51B579F5E00962DEA = {

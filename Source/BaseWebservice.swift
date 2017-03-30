@@ -24,7 +24,7 @@ public struct ROError {
     var errorMessage:String
     
     public func log() -> String {
-        return "[\(statusCode)]: \(errorType.rawValue)) - \(errorMessage)"
+        return "[\(String(describing: statusCode))]: \(errorType.rawValue)) - \(errorMessage)"
     }
 }
 
