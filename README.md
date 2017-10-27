@@ -38,7 +38,7 @@ Example Employees.json
 As next step you have to create your data model (EmplyoeeContainer and Employee).
 
 Employee.swift
-````swift
+```swift
 class Employee : ROJSONObject {
 
     required init() {
