@@ -6,9 +6,6 @@
 //  Copyright (c) 2015 Rascor International AG. All rights reserved.
 //
 
-
-
-
 import Alamofire
 import SwiftyJSON
 
@@ -70,7 +67,7 @@ open class BaseWebservice {
     - parameter password:String?:                            Optional password for authentication (Default = nil)
     - parameter roError:((errorObject:ROError): -> ())?      Optional Error block which receives an ROError object containing additional information
     */
-    open func get(_ urlString:String, callback:@escaping (Int, Any?) -> (), parameters:[String : Any]? = nil, headers:[String : String]? = nil, username:String? = nil, password:String? = nil, roError:((_ errorObject:ROError) -> ())? = nil) {
+    open func get(_ urlString:String, callback:@escaping (Int, Any?) -> (), parameters:Parameters? = nil, headers:HTTPHeaders? = nil, encoding:ParameterEncoding = JSONEncoding.default, username:String? = nil, password:String? = nil, roError:((_ errorObject:ROError) -> ())? = nil) {
     
         let sessionManager = Alamofire.SessionManager.default
         
@@ -79,8 +76,7 @@ open class BaseWebservice {
             sessionManager.adapter = AccessTokenAdapter(username: username, password: password)
         }
 
-
-        sessionManager.request(urlString, method: .get, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+        sessionManager.request(urlString, method: .get, parameters: parameters, encoding: encoding, headers: headers).responseJSON { response in
             
             if response.result.isSuccess {
                 callback((response.response?.statusCode)!, response.result.value)
@@ -107,7 +103,7 @@ open class BaseWebservice {
     - parameter password:String?:                            Optional password for authentication (Default = nil)
     - parameter roError:((errorObject:ROError): -> ())?      Optional Error block which receives an ROError object containing additional information
     */
-    open func getROJSONObject<T:ROJSONObject>(_ urlString:String, callback: @escaping (Int, T) -> (), parameters:[String : Any]? = nil, headers:[String : String]? = nil, username:String? = nil,password:String? = nil, roError:((_ errorObject:ROError) -> ())? = nil) {
+    open func getROJSONObject<T:ROJSONObject>(_ urlString:String, callback: @escaping (Int, T) -> (), parameters:Parameters? = nil, headers:HTTPHeaders? = nil, encoding:ParameterEncoding = JSONEncoding.default, username:String? = nil,password:String? = nil, roError:((_ errorObject:ROError) -> ())? = nil) {
         
         let webserviceCallback = {(status:Int, response:Any?) -> () in
             if let response = response {
@@ -119,7 +115,7 @@ open class BaseWebservice {
             }
         }
         
-        self.get(urlString, callback: webserviceCallback, parameters: parameters, headers:headers, username: username, password: password, roError:roError)
+        self.get(urlString, callback: webserviceCallback, parameters: parameters, headers:headers, encoding: encoding, username: username, password: password, roError:roError)
     }
     
     /**
@@ -131,7 +127,7 @@ open class BaseWebservice {
      - parameter password:String?:                            Optional password for authentication (Default = nil)
      - parameter roError:((errorObject:ROError): -> ())?      Optional Error block which receives an ROError object containing additional information
      */
-    open func getArray<T:ROJSONObject>(_ urlString:String, callback: @escaping (Int, Array<T>) -> (), parameters:[String : Any]? = nil, headers:[String : String]? = nil, username:String? = nil, password:String? = nil, roError:((_ errorObject:ROError) -> ())? = nil) {
+    open func getArray<T:ROJSONObject>(_ urlString:String, callback: @escaping (Int, Array<T>) -> (), parameters:Parameters? = nil, headers:HTTPHeaders? = nil, encoding:ParameterEncoding = JSONEncoding.default, username:String? = nil, password:String? = nil, roError:((_ errorObject:ROError) -> ())? = nil) {
         let webserviceCallback = {(status:Int, response:Any?) -> () in
             var elements = [T]()
             
@@ -157,7 +153,7 @@ open class BaseWebservice {
             }
         }
         
-        self.get(urlString, callback: webserviceCallback, parameters:parameters, headers:headers, username:username, password:password, roError:roError)
+        self.get(urlString, callback: webserviceCallback, parameters:parameters, headers:headers, encoding:encoding, username:username, password:password, roError:roError)
     }
     
     
